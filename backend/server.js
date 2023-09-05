@@ -8,6 +8,13 @@ myapp.get("/",(req,res)=>{
     res.send("welcome to express js");
 })
 
+myapp.get("/about",(req,res)=>{
+    res.send(`<h1>this is about page</h1>`);
+})
+
+
+
+
 
 
 myapp.listen(port,()=>{
