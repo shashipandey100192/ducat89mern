@@ -6,6 +6,7 @@ import "./modules/css/global.css";
 import {BrowserRouter,Route,Routes} from 'react-router-dom';
 import Mynavbar from './modules/shares/Mynavbar';
 import UserRegistor from './modules/auth/UserRegistor';
+import Landingpage from './modules/dashboard/Landingpage';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -14,6 +15,7 @@ root.render(
     <BrowserRouter>
       <Mynavbar/>
       <Routes>
+        <Route path='/' element={<Landingpage/>}></Route>
         <Route path='registor' element={<UserRegistor/>}></Route>
       </Routes>
     

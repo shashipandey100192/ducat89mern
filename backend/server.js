@@ -1,20 +1,15 @@
 const express = require('express');
 require('dotenv').config();
 require('./db/connection');
+const route = require('./routing/route');
 
 const port = process.env.port || 4000;
 const myapp = express();
 
-myapp.get("/",(req,res)=>{
-    res.send("welcome to express js");
-})
-
-myapp.get("/about",(req,res)=>{
-    res.send(`<h1>this is about page</h1>`);
-})
 
 
 
+myapp.use(route);
 
 
 
