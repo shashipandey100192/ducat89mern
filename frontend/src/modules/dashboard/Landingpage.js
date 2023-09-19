@@ -1,22 +1,22 @@
-import React,{useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
 
 function Landingpage() {
-const [mydata, setdata]=useState([]);
-        const mygetalldata = ()=>{
-            axios.get('http://localhost:7800/getdata').then((res)=>{
-                console.log(res.data);
-                setdata(res.data);
-            })
+    const [mydata, setdata] = useState([]);
+    const mygetalldata = () => {
+        axios.get('http://localhost:7800/getdata').then((res) => {
+            console.log(res.data);
+            setdata(res.data);
+        })
 
-        }
+    }
 
 
     useEffect(() => {
-        // mygetalldata();
-      },[]);
-   
+        mygetalldata();
+    }, []);
+
 
     return (
         <div className='container page border'>
@@ -31,29 +31,35 @@ const [mydata, setdata]=useState([]);
                     <table className="table table-bordered">
                         <thead>
                             <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">First</th>
-                                <th scope="col">Last</th>
-                                <th scope="col">Handle</th>
-                                <th scope="col">Handle</th>
-                                <th scope="col">Handle</th>
+                                <th scope="col">MongoDBId</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">Phone</th>
+                                <th scope="col">Gender</th>
+                                <th scope="col">City</th>
+                                <th scope="col">Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            {mydata.map((item)=>{
-                                return(
-                                    <tr>
-                                    <th scope="row">{item._id}</th>
-                                    <td>{item.Item}</td>
-                                    <td>{item.Region}</td>
-                                    <td>{item.Rep}</td>
-                                    <td>{item.Cost}</td>
-                                    <td>{item.Units}</td>
-                                    
-                                </tr>
+                            {mydata.map((item) => {
+                                return (
+                                    <tr key={item._id}>
+                                        <th scope="row">{item._id}</th>
+                                        <td>{item.Name}</td>
+                                        <td>{item.email}</td>
+                                        <td>{item.phone}</td>
+                                        <td>{item.gender}</td>
+                                        <td>{item.city}</td>
+                                        <td>
+                                            <button className='btn btn-info btn-sm'>View</button>
+                                            <button className='btn btn-warning btn-sm ms-2'>Edit</button>
+                                            <button className='btn btn-danger btn-sm ms-2'>Del</button>
+                                        </td>
+
+                                    </tr>
                                 )
                             })}
-                            
+
                         </tbody>
                     </table>
                 </div>

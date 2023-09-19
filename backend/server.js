@@ -7,6 +7,10 @@ require('./db/connection');
 const route = require('./routing/route');
 
 
+myapp.get("/",(req,res)=>{
+    res.send("welcome to express js res full  api");
+})
+
 
 
 
