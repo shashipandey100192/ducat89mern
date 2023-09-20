@@ -46,7 +46,7 @@ function Mynavbar() {
         <li><a className="dropdown-item" href="#">Settings</a></li>
         <li><Link className="dropdown-item" to="registor">Registor</Link></li>
         <li><hr className="dropdown-divider"/></li>
-        <li><a className="dropdown-item" href="#">Sign out</a></li>
+        <li><Link className="dropdown-item" to="/">Sign out</Link></li>
       </ul>
     </div>
       </form>

@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 function UserRegistor() {
     return (
@@ -31,8 +32,9 @@ function UserRegistor() {
                                 <input type="text" class="form-control" />
                             </div>
                             <div className='col-12 p-3 text-center'>
-                            <button className='btn btn-primary'>Submit</button>
+                            <button className='btn btn-primary'>Registor user</button>
                             <button className='btn btn-danger ms-3'>Cancle</button>
+                            <Link className='btn ms-3' to="/">login</Link>
                             </div>
                             
                             
