@@ -1,7 +1,41 @@
-import React from 'react'
+import React,{useState} from 'react'
 import { Link } from 'react-router-dom'
 
 function UserRegistor() {
+    const [sv,sf]= useState({
+        name:"",
+        email:"",
+        gender:"",
+        phone:"",
+        city:"",
+        pass:""
+      });
+
+      const setdata = (e)=>{
+        console.log(e.target.value);
+        const {name,value} = e.target;
+        sf((preval)=>{
+          return{
+            ...preval,
+            [name]:value
+          }
+        })
+      }
+
+    const mysubmit= ()=>{
+       
+        if(sv.name==="" || sv.email==="" || sv.pass==="")
+        {
+            alert("please fill forms");
+        }
+        else{
+            alert("welcome to ");
+            console.log(sv);
+        }
+    }
+
+
+
     return (
         <div className='container page'>
             <div className='row justify-content-center'>
@@ -13,26 +47,34 @@ function UserRegistor() {
                     <p className='h2'>User Registor Page</p>
                 </div>
                             <div className='col-md-6 p-3'>
-                                <label class="form-label">UserName</label>
-                                <input type="text" class="form-control" />
+                                <label class="form-label">Name</label>
+                                <input type="text" class="form-control" name="name" value={sv.name} onChange={setdata}/>
                             </div>
                             <div className='col-md-6 p-3'>
-                                <label class="form-label">Email address</label>
-                                <input type="email" class="form-control" />
+                                <label class="form-label">Email Id</label>
+                                <input type="email" class="form-control" name="email" value={sv.email} onChange={setdata}/>
                             </div>
                             <div className='col-md-6 p-3'>
                                 <label class="form-label">Gender</label>
-                                <select className='form-control'>
+                                <select className='form-control' name='gender' value={sv.gender} onChange={setdata}>
                                         <option>Male</option>
                                         <option>Female</option>
                                 </select>
                             </div>
                             <div className='col-md-6 p-3'>
                                 <label class="form-label">Phone No</label>
-                                <input type="text" class="form-control" />
+                                <input type="text" class="form-control" name='phone' value={sv.phone} onChange={setdata}/>
+                            </div>
+                            <div className='col-md-6 p-3'>
+                                <label class="form-label">City</label>
+                                <input type="text" class="form-control" name="city" value={sv.city} onChange={setdata}/>
+                            </div>
+                            <div className='col-md-6 p-3'>
+                                <label class="form-label">Password</label>
+                                <input type="text" class="form-control" name="pass" value={sv.pass} onChange={setdata}/>
                             </div>
                             <div className='col-12 p-3 text-center'>
-                            <button className='btn btn-primary'>Registor user</button>
+                            <button className='btn btn-primary' onClick={mysubmit}>Registor user</button>
                             <button className='btn btn-danger ms-3'>Cancle</button>
                             <Link className='btn ms-3' to="/">login</Link>
                             </div>
