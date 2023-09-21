@@ -31,6 +31,7 @@ function UserRegistor() {
         else{
             alert("welcome to ");
             console.log(sv);
+            const { name, email, phone, gender,city,pass } = sv;
         }
     }
 
