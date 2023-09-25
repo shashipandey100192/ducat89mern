@@ -22,17 +22,26 @@ function UserRegistor() {
         })
       }
 
-    const mysubmit= ()=>{
-       
+    const mysubmit = async ()=>{
         if(sv.name==="" || sv.email==="" || sv.pass==="")
         {
             alert("please fill forms");
         }
         else{
-            alert("welcome to ");
-            console.log(sv);
-            const { name, email, phone, gender,city,pass } = sv;
+        const { name, email, phone, city, gender,pass } = sv;
+        const res = await fetch("http://localhost:7800/create", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                name, email, phone, city, gender,pass
+            })
+        })
+        const data = await res.json();
+        console.log(data);
+        // window.location.href="/";
+    
         }
+    
     }
 
 

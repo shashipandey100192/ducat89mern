@@ -45,7 +45,7 @@ function Landingpage() {
                                 return (
                                     <tr key={item._id}>
                                         <th scope="row">{item._id}</th>
-                                        <td>{item.Name}</td>
+                                        <td>{item.name}</td>
                                         <td>{item.email}</td>
                                         <td>{item.phone}</td>
                                         <td>{item.gender}</td>
