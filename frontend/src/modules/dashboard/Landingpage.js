@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 
 function Landingpage() {
@@ -11,8 +12,6 @@ function Landingpage() {
         })
 
     }
-
-
     useEffect(() => {
         mygetalldata();
     }, []);
@@ -51,7 +50,7 @@ function Landingpage() {
                                         <td>{item.gender}</td>
                                         <td>{item.city}</td>
                                         <td>
-                                            <button className='btn btn-info btn-sm'>View</button>
+                                            <Link className='btn btn-info btn-sm' to={`details/${item._id}`}>View</Link>
                                             <button className='btn btn-warning btn-sm ms-2'>Edit</button>
                                             <button className='btn btn-danger btn-sm ms-2'>Del</button>
                                         </td>

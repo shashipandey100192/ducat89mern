@@ -9,6 +9,7 @@ import Mynavbar from './modules/shares/Mynavbar';
 import UserRegistor from './modules/auth/UserRegistor';
 import Landingpage from './modules/dashboard/Landingpage';
 import Userlogin from './modules/auth/Userlogin';
+import Detailspage from './modules/dashboard/Detailspage';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -20,6 +21,7 @@ root.render(
       <Route path='/' element={<Userlogin/>}></Route>
         <Route path='/landing' element={<Landingpage/>}></Route>
         <Route path='registor' element={<UserRegistor/>}></Route>
+        <Route path='landing/details/:id' element={<Detailspage/>}></Route>
       </Routes>
     
     </BrowserRouter>

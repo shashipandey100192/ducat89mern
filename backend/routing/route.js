@@ -23,6 +23,16 @@ route.post("/create",async(req,res)=>{
 });
 
 
+// get single data api
+route.get("/view/:id",async(req,res)=>{
+    const {id} = req.params;
+    const singleuser = await mypatt.findById({_id:id});
+    console.log(singleuser);
+    res.status(201).json(singleuser);
+});
+
+
+
 
 
 
