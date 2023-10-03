@@ -21,7 +21,7 @@ root.render(
       <Route path='/' element={<Userlogin/>}></Route>
         <Route path='/landing' element={<Landingpage/>}></Route>
         <Route path='registor' element={<UserRegistor/>}></Route>
-        <Route path='landing/details/:id' element={<Detailspage/>}></Route>
+        <Route path='landing/view/:id' element={<Detailspage/>}></Route>
       </Routes>
     
     </BrowserRouter>

@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 
 
 function Landingpage() {
+   
     const [mydata, setdata] = useState([]);
     const mygetalldata = () => {
         axios.get('http://localhost:7800/getdata').then((res) => {
@@ -15,6 +16,14 @@ function Landingpage() {
     useEffect(() => {
         mygetalldata();
     }, []);
+
+    const deleterecor = async(id)=>{
+        await axios.delete(`http://localhost:7800/deleterecord/${id}`).then((res)=>{
+            console.log(res.data);
+            mygetalldata();
+            });
+    }
+
 
 
     return (
@@ -50,9 +59,9 @@ function Landingpage() {
                                         <td>{item.gender}</td>
                                         <td>{item.city}</td>
                                         <td>
-                                            <Link className='btn btn-info btn-sm' to={`details/${item._id}`}>View</Link>
+                                            <Link className='btn btn-info btn-sm' to={`view/${item._id}`}>View</Link>
                                             <button className='btn btn-warning btn-sm ms-2'>Edit</button>
-                                            <button className='btn btn-danger btn-sm ms-2'>Del</button>
+                                            <button className='btn btn-danger btn-sm ms-2' onClick={()=>deleterecor(item._id)}>Del</button>
                                         </td>
 
                                     </tr>

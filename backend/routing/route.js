@@ -31,6 +31,13 @@ route.get("/view/:id",async(req,res)=>{
     res.status(201).json(singleuser);
 });
 
+// delete api
+route.delete("/deleterecord/:id",async(req,res)=>{
+    const {id} = req.params;
+    const a = await mypatt.findByIdAndDelete({_id:id})
+    console.log(a);
+    res.status(201).json(a);
+});
 
 
 
