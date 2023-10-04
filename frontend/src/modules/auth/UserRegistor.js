@@ -57,31 +57,31 @@ function UserRegistor() {
                     <p className='h2'>User Registor Page</p>
                 </div>
                             <div className='col-md-6 p-3'>
-                                <label class="form-label">Name</label>
-                                <input type="text" class="form-control" name="name" value={sv.name} onChange={setdata}/>
+                                <label className="form-label">Name</label>
+                                <input type="text" className="form-control" name="name" value={sv.name} onChange={setdata}/>
                             </div>
                             <div className='col-md-6 p-3'>
-                                <label class="form-label">Email Id</label>
-                                <input type="email" class="form-control" name="email" value={sv.email} onChange={setdata}/>
+                                <label className="form-label">Email Id</label>
+                                <input type="email" className="form-control" name="email" value={sv.email} onChange={setdata}/>
                             </div>
                             <div className='col-md-6 p-3'>
-                                <label class="form-label">Gender</label>
+                                <label className="form-label">Gender</label>
                                 <select className='form-control' name='gender' value={sv.gender} onChange={setdata}>
                                         <option>Male</option>
                                         <option>Female</option>
                                 </select>
                             </div>
                             <div className='col-md-6 p-3'>
-                                <label class="form-label">Phone No</label>
-                                <input type="text" class="form-control" name='phone' value={sv.phone} onChange={setdata}/>
+                                <label className="form-label">Phone No</label>
+                                <input type="text" className="form-control" name='phone' value={sv.phone} onChange={setdata}/>
                             </div>
                             <div className='col-md-6 p-3'>
-                                <label class="form-label">City</label>
-                                <input type="text" class="form-control" name="city" value={sv.city} onChange={setdata}/>
+                                <label className="form-label">City</label>
+                                <input type="text" className="form-control" name="city" value={sv.city} onChange={setdata}/>
                             </div>
                             <div className='col-md-6 p-3'>
-                                <label class="form-label">Password</label>
-                                <input type="text" class="form-control" name="pass" value={sv.pass} onChange={setdata}/>
+                                <label className="form-label">Password</label>
+                                <input type="text" className="form-control" name="pass" value={sv.pass} onChange={setdata}/>
                             </div>
                             <div className='col-12 p-3 text-center'>
                             <button className='btn btn-primary' onClick={mysubmit}>Registor user</button>

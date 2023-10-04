@@ -60,7 +60,7 @@ function Landingpage() {
                                         <td>{item.city}</td>
                                         <td>
                                             <Link className='btn btn-info btn-sm' to={`view/${item._id}`}>View</Link>
-                                            <button className='btn btn-warning btn-sm ms-2'>Edit</button>
+                                            <Link className='btn btn-warning btn-sm ms-2' to={`editrecord/${item._id}`}>Edit</Link>
                                             <button className='btn btn-danger btn-sm ms-2' onClick={()=>deleterecor(item._id)}>Del</button>
                                         </td>
 
