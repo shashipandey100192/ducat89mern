@@ -49,6 +49,26 @@ route.patch("/updaterecord/:id",async(req,res)=>{
 });
 
 
+/*login api */
+route.post("/login", async(req,res)=>{
+    console.log(req.body);
+    const {email,pass} = req.body;
+      
+    if(!email || !pass){
+        return res.status(422).json({error:"user and phone no dont match"});
+       
+    }
+    else{
+        const uservalidation = await mypatt.findOne({email:email});
+        if(!uservalidation)
+        {
+            res.status(250).json({error:"password not match"});  
+        }
+        else{
+            res.status(200).json({error:"welcome to"}); 
+        }
+    }
+});
 
 
 
