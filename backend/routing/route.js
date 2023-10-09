@@ -60,12 +60,13 @@ route.post("/login", async(req,res)=>{
     }
     else{
         const uservalidation = await mypatt.findOne({email:email});
-        if(!uservalidation)
+        console.log(uservalidation);
+        if(uservalidation.email===email && uservalidation.pass===pass)
         {
-            res.status(250).json({error:"password not match"});  
+            res.status(200).json({message:'welcome',status: 201}); 
         }
         else{
-            res.status(200).json({error:"welcome to"}); 
+            res.status(250).json({error:"password not match"});
         }
     }
 });

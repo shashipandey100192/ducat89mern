@@ -32,9 +32,13 @@ function Userlogin() {
         })
         const res = await mydata.json();
         console.log(res);
-        if(res.status===200)
+        if(res.status===201)
         {
+            alert("welcome to login");
             window.location.href="/landing";
+        }
+        else{
+          console.log("nothing");
         }
       }
 
