@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const db = "mongodb+srv://mernuser:supperpassword@cluster0.cqczybv.mongodb.net/mydatabase";
+const db = process.env.DATABASE;
 
 mongoose.connect(db,{
     useNewUrlParser: true,
