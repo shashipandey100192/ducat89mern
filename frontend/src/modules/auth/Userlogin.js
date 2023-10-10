@@ -23,7 +23,7 @@ function Userlogin() {
         e.preventDefault();
         const {email,pass} = ulogin;
         
-        const mydata = await fetch("http://localhost:7800/login",{
+        const mydata = await fetch("https://mernfullstack-b6zf.onrender.com/login",{
           method:"POST",
           headers:{"Content-Type":"application/json"},
           body:JSON.stringify({

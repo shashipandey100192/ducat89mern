@@ -29,7 +29,7 @@ function UserRegistor() {
         }
         else{
         const { name, email, phone, city, gender,pass } = sv;
-        const res = await fetch("http://localhost:7800/create", {
+        const res = await fetch("https://mernfullstack-b6zf.onrender.com/create", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({

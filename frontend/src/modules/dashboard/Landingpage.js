@@ -7,7 +7,7 @@ function Landingpage() {
    
     const [mydata, setdata] = useState([]);
     const mygetalldata = () => {
-        axios.get('http://localhost:7800/getdata').then((res) => {
+        axios.get('https://mernfullstack-b6zf.onrender.com/getdata').then((res) => {
             console.log(res.data);
             setdata(res.data);
         })
@@ -18,7 +18,7 @@ function Landingpage() {
     }, []);
 
     const deleterecor = async(id)=>{
-        await axios.delete(`http://localhost:7800/deleterecord/${id}`).then((res)=>{
+        await axios.delete(`https://mernfullstack-b6zf.onrender.com/deleterecord/${id}`).then((res)=>{
             console.log(res.data);
             mygetalldata();
             });

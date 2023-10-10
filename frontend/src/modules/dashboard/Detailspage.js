@@ -6,7 +6,7 @@ function Detailspage() {
     const {id} =useParams();
     const [mydata, setdata] = useState({});
     const singledata = () => {
-        axios.get(`http://localhost:7800/view/${id}`).then((res) => {
+        axios.get(`https://mernfullstack-b6zf.onrender.com/view/${id}`).then((res) => {
             console.log(res.data);
             setdata(res.data);
         })
